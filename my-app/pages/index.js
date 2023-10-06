@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { io } from "socket.io-client";
+
 export default function Home() {
   let socket;
   const bid = useRef();
@@ -10,7 +11,7 @@ export default function Home() {
     socketInitializer();
   }, [bid.current?.value]);
   async function socketInitializer() {
-    await fetch(" https://socket123421.vercel.app/socket.io");
+    await fetch("/api/socket");
 
     socket = io();
     socket.on("bid", (bid) => {
