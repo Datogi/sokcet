@@ -10,7 +10,7 @@ export default function Home() {
     socketInitializer();
   }, [bid.current?.value]);
   async function socketInitializer() {
-    await fetch("/api/socket");
+    await fetch(" https://socket123421.vercel.app/socket.io");
 
     socket = io();
     socket.on("bid", (bid) => {
